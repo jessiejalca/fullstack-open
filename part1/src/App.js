@@ -17,13 +17,14 @@ const App = () => {
 
   // We can also render dynamic content inside components
   return (
-    <div>
+    // We can use fragments to avoid "extra" div elements in the DOM
+    <>
       <h1>Greetings</h1>
       {/* Components can be used multiple times & combined in other components */}
       <Hello name={name} age={age} />
       {/* Use { } to embed content in the JSX/HTML */}
       <Hello name="Maya" age={26 + 10} />
-    </div>
+    </>
   );
 };
 
