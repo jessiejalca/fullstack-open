@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Exercise 4</title>
+  </head>
+  <body>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    Here is a mermaid diagram:
+    <pre class="mermaid">
+      sequenceDiagram
+      Alice->>John: Hello John, how are you?
+      John-->>Alice: Great!
+      Alice-)John: See you later!  
+    </pre>
+  </body>
+</html>
