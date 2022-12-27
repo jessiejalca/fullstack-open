@@ -15,10 +15,15 @@
     version:
     <pre class="mermaid">
       sequenceDiagram
-      note over browser: browser runs  code to add new note to the notes list
-      note over browser: browser stringifies new note & sends it to the server"
-      browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
-      server-->>browser: HTTP status code 201 - request fulfilled & new note created
+      browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+      server-->>browser: HTML-code
+      browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+      server-->>browser: main.css
+      browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+      server-->>browser: main.js
+      note over browser: browser starts executing js-code, which requests JSON data from server
+      browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+      server-->>browser: data.js
     </pre>
   </body>
 </html>
