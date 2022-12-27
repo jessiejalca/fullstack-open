@@ -12,12 +12,14 @@
       import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";
       mermaid.initialize({ startOnLoad: true });
     </script>
-    Here is a mermaid diagram:
+    This is what happens when a user creates a new note:
     <pre class="mermaid">
       sequenceDiagram
       browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
-      server-->>browser: HTTP status code 302 - URL redirect
-      note over browser: browser reloads the notes page
+      note over server: server adds new note data from POST-request to notes array
+      server-->>browser: HTTP status code 302 - URL redirect to /notes
+      browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+      server-->>browser: HTML-code
       browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
       server-->>browser: main.css
       browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
