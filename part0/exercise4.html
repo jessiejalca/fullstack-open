@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Exercise 4</title>
+    <title>Exercise 0.4</title>
   </head>
   <body>
     <script type="module">
@@ -15,9 +15,18 @@
     Here is a mermaid diagram:
     <pre class="mermaid">
       sequenceDiagram
-      Alice->>John: Hello John, how are you?
-      John-->>Alice: Great!
-      Alice-)John: See you later!  
+      browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+      server-->>browser: HTTP status code 302 - URL redirect
+      note over browser: browser reloads the notes page
+      browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+      server-->>browser: main.css
+      browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+      server-->>browser: main.js
+      browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+      server-->>browser: data.json
+
+      
+      note over browser: testing
     </pre>
   </body>
 </html>
