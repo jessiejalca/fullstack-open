@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 0.5</title>
+  </head>
+  <body>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    This is what happens when a user creates a new note in the single page app
+    version:
+    <pre class="mermaid">
+      sequenceDiagram
+      note over browser: browser runs  code to add new note to the notes list
+      note over browser: browser stringifies new note & sends it to the server"
+      browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+      server-->>browser: HTTP status code 201 - request fulfilled & new note created
+    </pre>
+  </body>
+</html>
