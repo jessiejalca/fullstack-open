@@ -6,6 +6,12 @@ const Content = (props) => (
   </p>
 );
 
+const Total = (props) => (
+  <p>
+    Number of exercises {props.exercise1 + props.exercise2 + props.exercise3}
+  </p>
+);
+
 const App = () => {
   const course = "Half Stack application development";
   const part1 = "Fundamentals of React";
@@ -21,7 +27,11 @@ const App = () => {
       <Content part={part1} exercise={exercises1} />
       <Content part={part2} exercise={exercises2} />
       <Content part={part3} exercise={exercises3} />
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <Total
+        exercise1={exercises1}
+        exercise2={exercises2}
+        exercise3={exercises3}
+      />
     </>
   );
 };
